@@ -1,0 +1,12 @@
+.gitignore
+.build/
+.idea/
+.idea/.gitignore
+.idea/aws.xml
+.idea/easycode.ignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/qastagebuild.iml
+.idea/vcs.xml
+
+cypress/screenshots./

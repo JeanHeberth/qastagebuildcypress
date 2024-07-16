@@ -190,7 +190,6 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
         cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
         cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.emailDiferente)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
@@ -203,7 +202,7 @@ describe('Cadastro inválido', () => {
         });
     });
 
-    it('deve falhar ao tentar cadastrar com campo confirmar diferente do email informado', () => {
+    it('deve falhar ao tentar cadastrar com campo confirmar email diferente do email informado', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
@@ -353,4 +352,8 @@ describe('Cadastro inválido', () => {
 
         });
     });
+    afterEach(()=> {
+        cy.screenshot()
+    })
+
 })
