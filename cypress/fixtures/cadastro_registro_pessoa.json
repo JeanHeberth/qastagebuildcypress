@@ -2,7 +2,7 @@
   "botaoInscricao": "[data-cy='button-btn-enroll']",
   "nome": "[data-cy='input-signup-personal-data-firstName']",
   "sobreNome": "[data-cy='input-signup-personal-data-lastName']",
-  "dataAniversario": "[data-cy='input-signup-personal-data-birthDate']",
+  "dataNascimento": "[data-cy='input-signup-personal-data-birthDate']",
   "cpf": "[data-cy='input-signup-personal-data-cpf']",
   "email": "[data-cy='input-signup-personal-data-email']",
   "confirmarEmail": "[data-cy='input-signup-personal-data-email-confirm']",
@@ -11,5 +11,6 @@
   "clicaNivel": "Selecione a proficiência...",
   "selecionaProviciencia": "Intermediate",
   "selecionaLgpd": "[data-cy='input-signup-personal-data-lgpd']",
-  "botaoProximo": "[data-cy='button-signup_submit_button_1']"
+  "botaoProximo": "[data-cy='button-signup_submit_button_1']",
+  "errorNome": "Preencha este campo."
 }

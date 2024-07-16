@@ -2,13 +2,18 @@
     "nome": "Usuário",
     "sobrenome": "Testssse",
     "dataNascimento": "30/01/2000",
-    "cpf": "73392998079",
-    "email": "testando@teste.com",
-    "confirmarEmail": "testando@teste.com",
+    "cpf": "50840300085",
+    "cpfEmUso": "45051586082",
+    "email": "testeteste@teste.com",
+    "emailEmUso": "testandos@teste.com",
+    "confirmarEmail": "testeteste@teste.com",
     "senha": "123456",
     "confirmarSenha": "123456",
     "selecionaProficiencia": "Iniciante",
-    "selecionaLGPD": "Ensino Fundamental"
-
-
+    "selecionaLGPD": "Ensino Fundamental",
+    "dataNascimentoInvalida": "30/01/2024",
+    "cpfInvalido": "12345678998",
+    "emailInvalido": "teste@teste",
+    "emailDiferente": "teste@teste.com",
+    "senhaDiferente": "12345678910"
 }
