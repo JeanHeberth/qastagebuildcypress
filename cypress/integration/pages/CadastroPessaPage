@@ -1,13 +1,5 @@
 class CadastroPessoaPage {
-    visit() {
-        cy.visit('https://qastage.buildbox.one/18/cadastro');
-        return this;
-    }
-
-    btnInscricao() {
-        cy.get('[data-cy="button-btn-enroll"]').click();
-        return this;
-    }
+    
 
     firstName(firstName) {
         cy.get('[data-cy="input-signup-personal-data-firstName"]').type(firstName);
@@ -61,8 +53,7 @@ class CadastroPessoaPage {
     }
 
     submit() {
-        cy.get('[data-cy="button-signup-personal-data-submit"]').click();
-       this;
+        cy.get('[data-cy="button-signup_submit_button_1"]').click();      return this;
     }
 
 }

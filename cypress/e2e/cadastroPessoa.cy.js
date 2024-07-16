@@ -1,29 +1,28 @@
-import CadastroPessoaPage from "../integration/pages/CadastroPessaPage";
+const elemento_registro = require("../fixtures/cadastro_registro.json")
+const base = require("../fixtures/elemento_pagina.json")
+const massaDeDados = require("../fixtures/massa_dados_cadastro_pessoa.json")
+
 
 describe('Cadastro', () => {
-  
-  const cadastroPessoaPage = new CadastroPessoaPage();
-  
-  
   beforeEach(() => {
-      cadastroPessoaPage.visit().btnInscricao();
+     cy.visit(base.base_uri)
   });
 
   it('deve cadastrar com sucesso com dados válidos', () => {
 
-      cadastroPessoaPage
-          .firstName('Usuário Teste')
-          .lastName('Sobrenome Teste')
-          .birthDate('01/01/2000')
-          .cpf('91958982040')
-          .fillEmail('testes@example.com')
-          .emailConfirm("testes@example.com")
-          .fillPassword('senha123')
-          .passwordConfirm('senha123')
-          .selectProficiencyLevel('Intermediate')
-          .selctionLGPD()
-          .submit();
-
+    cy.get(elemento_registro.btnInscricao).click()
+    cy.get(elemento_registro.firstName).type(massaDeDados.nome)
+    cy.get(elemento_registro.lastName).type(massaDeDados.sobrenome)
+    cy.get(elemento_registro.birthDate).type(massaDeDados.dataNascimento)
+    cy.get(elemento_registro.cpf).type(massaDeDados.cpf)
+    cy.get(elemento_registro.fillEmail).type(massaDeDados.email)
+    cy.get(elemento_registro.emailConfirmation).type(massaDeDados.confirmarEmail)
+    cy.get(elemento_registro.password).type(massaDeDados.senha)
+    cy.get(elemento_registro.passwordConfirmation).type(massaDeDados.confirmarSenha)
+    cy.contains(elemento_registro.openLevel).click()
+    cy.contains(elemento_registro.selectProviciency).click()
+    cy.get(elemento_registro.selectionLGPD).click()
+    cy.get(elemento_registro.btnSubmit).click()
 
   });
 
