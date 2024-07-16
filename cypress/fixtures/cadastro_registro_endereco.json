@@ -1,5 +1,7 @@
 {
   "cep": "[data-cy='input-signup-address-cep']",
   "casa": "[data-cy='input-signup-address-number']",
-  "complemento": "[data-cy='input-signup-address-complement']"
+  "complemento": "[data-cy='input-signup-address-complement']",
+  "botaoProximo": "[data-cy='button-signup_submit_button_3']",
+  "botaoAcessarPlataforma": "[data-cy='button-wide_window_button']"
 }

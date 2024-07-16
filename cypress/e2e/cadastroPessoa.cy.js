@@ -15,7 +15,7 @@ describe('Cadastro', () => {
     cy.get(elemento_registroPessoa.botaoInscricao).click()
     cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
     cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
-    cy.get(elemento_registroPessoa.dataAniversario).type(massaDeDadosPessoa.dataNascimento)
+    cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
     cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
     cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
     cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
@@ -28,7 +28,7 @@ describe('Cadastro', () => {
     cy.get(elemento_registroEndereco.cep).type(massaDeDadosEndereco.cep)
     cy.get(elemento_registroEndereco.casa).type(massaDeDadosEndereco.casa)
     cy.get(elemento_registroEndereco.complemento).type(massaDeDadosEndereco.complemento)
-
+    // cy.get(elemento_registroEndereco.botaoProximo).click()
+    // cy.get(elemento_registroEndereco.botaoAcessarPlataforma).should('be.visible')
   });
-
 })
