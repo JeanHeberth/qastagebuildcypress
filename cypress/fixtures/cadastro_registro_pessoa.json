@@ -1,15 +1,15 @@
 {
-  "btnInscricao": "[data-cy='button-btn-enroll']",
-  "firstName": "[data-cy='input-signup-personal-data-firstName']",
-  "lastName": "[data-cy='input-signup-personal-data-lastName']",
-  "birthDate": "[data-cy='input-signup-personal-data-birthDate']",
+  "botaoInscricao": "[data-cy='button-btn-enroll']",
+  "nome": "[data-cy='input-signup-personal-data-firstName']",
+  "sobreNome": "[data-cy='input-signup-personal-data-lastName']",
+  "dataAniversario": "[data-cy='input-signup-personal-data-birthDate']",
   "cpf": "[data-cy='input-signup-personal-data-cpf']",
-  "fillEmail": "[data-cy='input-signup-personal-data-email']",
-  "emailConfirmation": "[data-cy='input-signup-personal-data-email-confirm']",
-  "password": "[data-cy='input-signup-personal-data-password']",
-  "passwordConfirmation": "[data-cy='input-signup-personal-data-password-confirm']",
-  "openLevel": "Selecione a proficiência...",
-  "selectProviciency": "Intermediate",
-  "selectionLGPD": "[data-cy='input-signup-personal-data-lgpd']",
-  "btnSubmit": "[data-cy='button-signup_submit_button_1']"
+  "email": "[data-cy='input-signup-personal-data-email']",
+  "confirmarEmail": "[data-cy='input-signup-personal-data-email-confirm']",
+  "senha": "[data-cy='input-signup-personal-data-password']",
+  "confirmarSenha": "[data-cy='input-signup-personal-data-password-confirm']",
+  "clicaNivel": "Selecione a proficiência...",
+  "selecionaProviciencia": "Intermediate",
+  "selecionaLgpd": "[data-cy='input-signup-personal-data-lgpd']",
+  "botaoProximo": "[data-cy='button-signup_submit_button_1']"
 }
