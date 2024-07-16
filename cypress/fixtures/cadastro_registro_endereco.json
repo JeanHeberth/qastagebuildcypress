@@ -1,0 +1,5 @@
+{
+  "cep": "[data-cy='input-signup-address-cep']",
+  "casa": "[data-cy='input-signup-address-number']",
+  "complemento": "[data-cy='input-signup-address-complement']"
+}
