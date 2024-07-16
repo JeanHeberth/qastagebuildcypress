@@ -1,0 +1,70 @@
+class CadastroPessoaPage {
+    visit() {
+        cy.visit('https://qastage.buildbox.one/18/cadastro');
+        return this;
+    }
+
+    btnInscricao() {
+        cy.get('[data-cy="button-btn-enroll"]').click();
+        return this;
+    }
+
+    firstName(firstName) {
+        cy.get('[data-cy="input-signup-personal-data-firstName"]').type(firstName);
+        return this;
+    }
+
+    lastName(lastName) {
+        cy.get('[data-cy="input-signup-personal-data-lastName"]').type(lastName);
+        return this;
+    }
+
+    birthDate(birthDate) {
+        cy.get('[data-cy="input-signup-personal-data-birthDate"]').type(birthDate);
+        return this;
+    }
+
+    cpf(cpf) {
+        cy.get('[data-cy="input-signup-personal-data-cpf"]').type(cpf);
+        return this;
+    }
+
+    fillEmail(email) {
+        cy.get('[data-cy="input-signup-personal-data-email"]').type(email);
+        return this;
+    }
+
+    emailConfirm(emailConfirm) {
+        cy.get('[data-cy="input-signup-personal-data-email-confirm"]').type(emailConfirm);
+        return this;
+    }
+
+    fillPassword(password) {
+        cy.get('[data-cy="input-signup-personal-data-password"]').type(password);
+        return this;
+    }
+
+    passwordConfirm(passwordConfirm) {
+        cy.get('[data-cy="input-signup-personal-data-password-confirm"]').type(passwordConfirm);
+        return this;
+    }
+
+    selectProficiencyLevel(level) {
+        cy.contains('Selecione a proficiência').click({waitForAnimations: false});
+        cy.contains(level).click();
+        return this;
+    }
+
+    selctionLGPD() {
+        cy.get('[data-cy="input-signup-personal-data-lgpd"]').click();
+        return this;
+    }
+
+    submit() {
+        cy.get('[data-cy="button-signup-personal-data-submit"]').click();
+       this;
+    }
+
+}
+
+export default CadastroPessoaPage;
