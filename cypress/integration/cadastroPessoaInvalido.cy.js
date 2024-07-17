@@ -1,4 +1,3 @@
-const base = require("../fixtures/elemento_pagina.json");
 const elemento_registroPessoa = require("../fixtures/cadastro_registro_pessoa.json");
 const massaDeDadosPessoa = require("../fixtures/massa_dados_cadastro_pessoa.json");
 const elemento_registroEndereco = require("../fixtures/cadastro_registro_endereco.json");
