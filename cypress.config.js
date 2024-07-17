@@ -5,7 +5,7 @@ module.exports = defineConfig({
     e2e: {
         specPattern: 'cypress/integration/**/*.cy.{js,jsx,ts,tsx}',
         supportFile: 'cypress/support/e2e.js',
-        // baseUrl: 'http://localhost:3000',
+        baseUrl: 'https://qastage.buildbox.one/18/cadastro',
         setupNodeEvents(on, config) {
             allureWriter(on, config);
             return config;

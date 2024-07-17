@@ -8,7 +8,7 @@ const cpf = require('gerador-validador-cpf');
 
 describe('Cadastro', () => {
     beforeEach(() => {
-        cy.visit(base.base_uri)
+        cy.visit("/")
         cy.get(elemento_registroPessoa.botaoInscricao).click()
     });
 

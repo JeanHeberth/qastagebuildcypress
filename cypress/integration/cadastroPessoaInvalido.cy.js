@@ -8,7 +8,7 @@ const {faker} = require("@faker-js/faker");
 
 describe('Cadastro inválido', () => {
     beforeEach(() => {
-        cy.visit(base.base_uri)
+        cy.visit("/")
         cy.get(elemento_registroPessoa.botaoInscricao).click()
     });
 
