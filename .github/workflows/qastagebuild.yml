@@ -13,18 +13,6 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
-    services:
-      web:
-        image: node:14
-        ports:
-          - 3000:3000
-        options: --health-cmd="curl --fail http://localhost:3000 || exit 1" --health-interval=10s --health-timeout=5s --health-retries=3
-        env:
-          NODE_ENV: development
-        volumes:
-          - ./:/app
-        command: sh -c "cd /app && npm install && npm start"
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
