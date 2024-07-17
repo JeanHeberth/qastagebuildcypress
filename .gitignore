@@ -42,6 +42,7 @@ bin/
 .DS_Store
 
 cypress/screenshots/
+cypress/videos/
 cypress/logs/
 .nyc_output/
 coverage/
