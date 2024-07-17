@@ -3,6 +3,8 @@ const elemento_registroPessoa = require("../fixtures/cadastro_registro_pessoa.js
 const massaDeDadosPessoa = require("../fixtures/massa_dados_cadastro_pessoa.json");
 const elemento_registroEndereco = require("../fixtures/cadastro_registro_endereco.json");
 const massaDeDadosEndereco = require("../fixtures/massa_dados_cadastro_endereco.json");
+const cpf = require("gerador-validador-cpf");
+const {faker} = require("@faker-js/faker");
 
 describe('Cadastro inválido', () => {
     beforeEach(() => {
@@ -10,12 +12,18 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.botaoInscricao).click()
     });
 
+
+    const cpfAleatorio = cpf.generate();
+    const emailAleatorio = faker.internet.email();
+
+
     it('deve falhar ao tentar cadastrar com campo nome vazio', () => {
+
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -30,9 +38,9 @@ describe('Cadastro inválido', () => {
     it('deve falhar ao tentar cadastrar com campo sobrenome vazio', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -47,9 +55,9 @@ describe('Cadastro inválido', () => {
     it('deve falhar ao tentar cadastrar com campo data de nascimento vazio', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -64,9 +72,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimentoInvalida)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -83,8 +91,8 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -101,8 +109,8 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
         cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpfInvalido)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -119,8 +127,8 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
         cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpfEmUso)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -136,8 +144,7 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -153,7 +160,7 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
         cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.emailInvalido)
         cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
@@ -170,7 +177,7 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
         cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.emailEmUso)
         cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
@@ -189,8 +196,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.emailDiferente)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -206,8 +214,8 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
         cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.emailDiferente)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
@@ -225,9 +233,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
         cy.contains(elemento_registroPessoa.selecionaProviciencia).click()
         cy.get(elemento_registroPessoa.selecionaLgpd).click()
@@ -241,9 +249,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         // cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -259,9 +267,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.senhaDiferente)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -278,9 +286,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -294,9 +302,9 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -311,34 +319,14 @@ describe('Cadastro inválido', () => {
         });
     });
 
-    it('deve falhar ao tentar cadastrar com cep vazio', () => {
-        cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
-        cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
-        cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
-        cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
-        cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
-        cy.contains(elemento_registroPessoa.clicaNivel).click()
-        cy.contains(elemento_registroPessoa.selecionaProviciencia).click()
-        cy.get(elemento_registroPessoa.selecionaLgpd).click()
-        cy.get(elemento_registroPessoa.botaoProximo).click()
-        cy.get(elemento_registroEndereco.casa).type(massaDeDadosEndereco.casa)
-        cy.get(elemento_registroEndereco.botaoProximo).click()
-        cy.get(elemento_registroEndereco.cep).then($input => {
-            expect($input[0].validationMessage).to.eq('Preencha este campo.');
-
-        });
-    });
 
     it('deve falhar ao tentar cadastrar com casa vazio', () => {
         cy.get(elemento_registroPessoa.nome).type(massaDeDadosPessoa.nome)
         cy.get(elemento_registroPessoa.sobreNome).type(massaDeDadosPessoa.sobrenome)
         cy.get(elemento_registroPessoa.dataNascimento).type(massaDeDadosPessoa.dataNascimento)
-        cy.get(elemento_registroPessoa.cpf).type(massaDeDadosPessoa.cpf)
-        cy.get(elemento_registroPessoa.email).type(massaDeDadosPessoa.email)
-        cy.get(elemento_registroPessoa.confirmarEmail).type(massaDeDadosPessoa.confirmarEmail)
+        cy.get(elemento_registroPessoa.cpf).type(cpfAleatorio)
+        cy.get(elemento_registroPessoa.email).type(emailAleatorio)
+        cy.get(elemento_registroPessoa.confirmarEmail).type(emailAleatorio)
         cy.get(elemento_registroPessoa.senha).type(massaDeDadosPessoa.senha)
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
@@ -355,5 +343,4 @@ describe('Cadastro inválido', () => {
     afterEach(()=> {
         cy.screenshot()
     })
-
 })
