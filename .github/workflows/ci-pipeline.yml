@@ -53,8 +53,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          wait-on: http://localhost:3000
+          config-file: cypress.json
 
   cypress-run:
     runs-on: ubuntu-latest
