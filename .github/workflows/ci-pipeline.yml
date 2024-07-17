@@ -26,6 +26,8 @@ jobs:
 
   cypress-run:
     runs-on: ubuntu-latest
+    needs:
+      - install
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
