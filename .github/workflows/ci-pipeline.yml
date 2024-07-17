@@ -33,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./qastagebuildcypress
+        working-directory: ./qastagebuildcypress/package.json
 
   test:
     runs-on: ubuntu-latest
