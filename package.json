@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
+    "lint": "eslint .",
+    "test": "jest",
+    "build": "webpack --mode production",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "browser:chrome": "npx cypress run --browser=chrome --headed --spec cypress/e2e --reporter mocha-allure-reporter",
-    "report:allure": "npx allure generate allure-results --clean -o allure-report && allure open  allure-report"
+    "cypress:run": "cypress run"
   },
   "keywords": [],
   "author": "",
