@@ -1,6 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Linter } from "eslint";
-import { FlatCompat } from "@eslint/eslintrc";
+// eslint.config.cjs
+
+const { FlatCompat } = require('@eslint/eslintrc');
+const path = require('path');
 
 // This helper function provides compatibility for older config formats.
 const compat = new FlatCompat({
@@ -8,27 +9,24 @@ const compat = new FlatCompat({
   resolvePluginsRelativeTo: __dirname,
 });
 
-export default [
+module.exports = [
   {
-    files: ["**/*.js", "**/*.jsx"],
+    files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
       parserOptions: {
         ecmaVersion: 2021,
-        sourceType: "module",
+        sourceType: 'module',
         ecmaFeatures: {
-          modules: true,
           jsx: true,
         },
       },
     },
     rules: {
-      indent: ["error", 2],
-      "linebreak-style": ["error", "unix"],
-      quotes: ["error", "single"],
-      semi: ["error", "always"],
-
+      indent: ['error', 2],
+      'linebreak-style': ['error', 'unix'],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
     },
   },
-  ...compat.extends("eslint:recommended", "plugin:react/recommended"),
-
+  ...compat.extends('eslint:recommended', 'plugin:react/recommended'),
 ];
