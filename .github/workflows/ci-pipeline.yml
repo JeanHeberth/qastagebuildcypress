@@ -33,14 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-
-      - name: Reconfigure git to use HTTP authentication
-        run: >
-          git config --global url."https://github.com/".insteadOf
-          ssh://git@github.com/
+        working-directory: ./qastagebuildcypress/qastagebuildcypress
 
   test:
     runs-on: ubuntu-latest
