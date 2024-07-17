@@ -10,9 +10,9 @@
     "report:allure": "npx allure generate allure-results --clean -o allure-report && allure open  allure-report"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jean Heberth",
   "license": "ISC",
-  "description": "",
+  "description": "Este repositório contém testes automatizados usando Cypress. Siga as instruções abaixo para configurar e executar os testes.",
   "devDependencies": {
     "@cypress/grep": "^4.1.0",
     "@faker-js/faker": "^8.4.1",
@@ -25,5 +25,13 @@
     "express": "^4.19.2",
     "faker": "^5.5.3",
     "mocha-allure-reporter": "^1.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanHeberth/qastagebuildcypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeanHeberth/qastagebuildcypress/issues"
+  },
+  "homepage": "https://github.com/JeanHeberth/qastagebuildcypress#readme"
 }
