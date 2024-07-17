@@ -9,6 +9,7 @@ module.exports = defineConfig({
         setupNodeEvents(on, config) {
             allureWriter(on, config);
             return config;
+            "cypress open --config-file=cypress.config.js"
         },
     },
 
