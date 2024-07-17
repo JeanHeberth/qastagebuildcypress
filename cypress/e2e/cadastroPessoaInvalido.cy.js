@@ -28,7 +28,7 @@ describe('Cadastro inválido', () => {
         cy.get(elemento_registroPessoa.confirmarSenha).type(massaDeDadosPessoa.confirmarSenha)
         cy.contains(elemento_registroPessoa.clicaNivel).click()
         cy.contains(elemento_registroPessoa.selecionaProviciencia).click()
-        // cy.get(elemento_registroPessoa.selecionaLgpd).click()
+        cy.get(elemento_registroPessoa.selecionaLgpd).click()
         cy.get(elemento_registroPessoa.botaoProximo).click()
         cy.get(elemento_registroPessoa.nome).then($input => {
             expect($input[0].validationMessage).to.eq('Preencha este campo.');
