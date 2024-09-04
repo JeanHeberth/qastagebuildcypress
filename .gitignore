@@ -17,6 +17,8 @@ node_modules/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+/allure-results
+/allure-reports
 
 ### Eclipse ###
 .apt_generated
