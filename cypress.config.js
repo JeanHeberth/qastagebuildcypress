@@ -1,5 +1,5 @@
 const {defineConfig} = require("cypress");
-const allureWriter = require("@shelex/cypress-allure-plugin/writer");
+const {allureCypress} = require("allure-cypress/reporter");
 
 module.exports = defineConfig({
     e2e: {
@@ -7,7 +7,7 @@ module.exports = defineConfig({
         supportFile: 'cypress/support/e2e.js',
         baseUrl: 'https://qastage.buildbox.one/18/cadastro',
         setupNodeEvents(on, config) {
-            allureWriter(on, config);
+            allureCypress(on, config);
             return config;
         },
     },
